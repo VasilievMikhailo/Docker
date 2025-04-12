@@ -14,7 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-
       - name: Run Cypress tests in Docker
         run: |
           docker run --rm \
