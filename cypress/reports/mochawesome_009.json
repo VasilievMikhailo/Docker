@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-12T12:22:23.652Z",
+    "end": "2025-04-12T12:22:32.661Z",
+    "duration": 9009,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "43cd9dfd-5d5f-4be3-9115-e51fb2100ff3",
+      "title": "",
+      "fullFile": "cypress/e2e/sample_test.cy.js",
+      "file": "cypress/sample_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "72d90b6a-b328-4858-bdd9-c66eae319815",
+          "title": "Add car and Fuel expenses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add car and Fuel expenses whole scenario",
+              "fullTitle": "Add car and Fuel expenses Add car and Fuel expenses whole scenario",
+              "timedOut": null,
+              "duration": 8971,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[class=\"btn btn-outline-white header_signin\"]').click();\ncy.get('#signinEmail').type(Cypress.env('userEmail'));\ncy.get('#signinPassword').type(Cypress.env('userPassword'));\ncy.get('[class=\"btn btn-primary\"]').click();\ncy.contains('Garage').should('be.visible');\ncy.contains('Add car').click();\ncy.get('#addCarBrand').contains('Audi');\ncy.get('#addCarModel').contains('TT'); // cy.list_of_brands(['Audi', 'BMW', 'Ford', 'Porsche', 'Fiat']);\n// cy.list_of_audi_models(['TT', 'R8', 'Q7', 'A6', 'A8']);\ncy.get('#addCarBrand').select('BMW');\ncy.get('#addCarBrand').contains('BMW').should('be.visible');\ncy.get('#addCarModel').contains('3').should('be.visible'); // cy.list_of_bmw_models(['3', '5', 'X5', 'X6', 'Z3']);\ncy.get('#addCarBrand').select('Ford');\ncy.get('#addCarBrand').contains('Ford').should('be.visible');\ncy.get('#addCarModel').contains('Fiesta').should('be.visible'); // cy.list_of_ford_models(['Fiesta', 'Focus', 'Fusion', 'Mondeo', 'Sierra']);\ncy.get('#addCarBrand').select('Porsche');\ncy.get('#addCarBrand').contains('Porsche').should('be.visible');\ncy.get('#addCarModel').contains('911').should('be.visible'); // cy.list_of_porsche_models(['911', 'Cayenne', 'Panamera']);\ncy.get('#addCarBrand').select('Fiat');\ncy.get('#addCarBrand').contains('Fiat').should('be.visible');\ncy.get('#addCarModel').contains('Palio').should('be.visible'); // cy.list_of_fiat_models(['Palio', 'Ducato', 'Panda', 'Punto', 'Scudo']);\ncy.get('#addCarMileage').type('qwe');\ncy.get('#addCarBrand').select('Audi');\ncy.get('#addCarMileage').should('be.empty');\ncy.contains('Mileage cost required').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addCarMileage').type('-1');\ncy.contains('Mileage has to be from 0 to 999999').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addCarMileage').clear();\ncy.get('#addCarMileage').type('0');\ncy.get('[class=\"btn btn-primary\"]').contains('Add').should('not.be.disabled');\ncy.get('#addCarMileage').clear();\ncy.get('#addCarMileage').type('9999991');\ncy.get('#addCarBrand').select('Audi');\ncy.contains('Mileage has to be from 0 to 999999').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').should('be.disabled');\ncy.get('#addCarMileage').clear();\ncy.get('#addCarMileage').type('200');\ncy.get('[class=\"btn btn-primary\"]').contains('Add').should('not.be.disabled');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').click();\ncy.get('[class=\"car_add-expense btn btn-success\"]').contains('Add fuel expense').should('be.visible');\ncy.get('[class=\"car_add-expense btn btn-success\"]').contains('Add fuel expense').click();\ncy.contains('Add an expense').should('be.visible');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').should('be.disabled');\ncy.update_mileage('20');\ncy.get('#addExpenseLiters').click();\ncy.get('#addExpenseTotalCost').click();\ncy.contains('Liters required').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseLiters').click();\ncy.contains('Total cost required').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseLiters').type('0.009');\ncy.contains('Liters has to be from 0.01 to 9999').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseTotalCost').type('0');\ncy.contains('Total cost has to be from 0.01 to 1000000').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseLiters').clear();\ncy.get('#addExpenseLiters').type('9998');\ncy.get('#addExpenseTotalCost').click();\ncy.get('#addExpenseTotalCost').clear();\ncy.get('#addExpenseTotalCost').type('1000000');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').should('not.be.disabled');\ncy.get('#addExpenseLiters').clear();\ncy.get('#addExpenseLiters').type('9999.01');\ncy.contains('Liters has to be from 0.01 to 9999').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseTotalCost').clear();\ncy.get('#addExpenseTotalCost').type('1000000.01');\ncy.contains('Total cost has to be from 0.01 to 1000000').should('be.visible').and('have.css', 'color', 'rgb(220, 53, 69)');\ncy.get('#addExpenseLiters').clear();\ncy.get('#addExpenseLiters').type('5');\ncy.get('#addExpenseTotalCost').clear();\ncy.get('#addExpenseTotalCost').type('4');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').should('not.be.disabled');\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-primary\"]').contains('Add').click();\ncy.get('[class=\"col-lg-9 main-wrapper\"]').find('h1').contains('Fuel expenses').should('be.visible');\ncy.get('[class=\"btn btn-white btn-sidebar sidebar_btn\"]').contains('Garage').click();\ncy.get('[class=\"icon icon-edit\"]').click();\ncy.get('[class=\"btn btn-outline-danger\"]').click();\ncy.get('[class=\"modal-content\"]').find('[class=\"btn btn-danger\"]').click();\ncy.contains('You don’t have any cars in your garage').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<option>' to be 'visible'\n\nThis element `<option>` is not visible because it has an effective width and height of: `0 x 0` pixels.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<option>' to be 'visible'\n\nThis element `<option>` is not visible because it has an effective width and height of: `0 x 0` pixels.\n    ./cypress/e2e/sample_test.cy.js/</<@https://qauto.forstudy.space/__cypress/tests?p=cypress/e2e/sample_test.cy.js:115:44\n    ../driver/src/cypress/cy.ts/setRunnable/runnable.fn@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:178680:43\n    callFn@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:129491:21\n    ../driver/src/cypress/runner.ts/create/onRunnableRun/<@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:185755:30\n    finallyHandler@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:9576:23\n    tryCatcher@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:13022:23\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromiseFromHandler@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:10957:31\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:11014:18\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:11059:10\n    ../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:11139:18\n    _drainQueueStep@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:7729:12\n    _drainQueue@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:7722:24\n    ../../node_modules/bluebird/js/release/async.js/</Async.prototype._drainQueues@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:7738:16\n    ../../node_modules/bluebird/js/release/async.js/</Async/this.drainQueues@https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:7608:14\n",
+                "diff": null
+              },
+              "uuid": "3c7579c3-a25a-490c-b8ec-d83e1e0ebd63",
+              "parentUUID": "72d90b6a-b328-4858-bdd9-c66eae319815",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3c7579c3-a25a-490c-b8ec-d83e1e0ebd63"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8971,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
